@@ -8,22 +8,29 @@ class FurnitureGridComponent {
   }
 
   fetchFurnitures = () => setTimeout(() => {  
-    return API.fetchFurnitures(this.saveFurnitures, console.error); 
-    
+    return API.fetchFurnitures(
+      (furnitures) => {
+        this.state.loading = false;
+        this.saveFurnitures(furnitures);
+      },
+      (err) => {
+        alert(err);
+        this.state.loading = false;
+        this.render();
+      }
+    );
  },1000)
 
   saveFurnitures = (furnitures) => {
     this.state.furnitures = furnitures;
-    this.state.loading = false;
-
     this.render();
   }
 
   deleteFurniture = (id) => {
     API.deleteFurniture(
       id,
-      () => API.fetchFurnitures(this.saveFurnitures, console.error),
-      console.error
+      () => API.fetchFurnitures(this.saveFurnitures, alert),
+      alert
     );
   }
 
@@ -46,7 +53,7 @@ class FurnitureGridComponent {
     const { loading, furnitures } = this.state;
     if (loading) {
       this.htmlElement.innerHTML = `<div class="text-center"><img src="assets/loading.gif"/></div>`;
-    } else {
+    } else if (furnitures.length > 0) {
       this.htmlElement.innerHTML = '';
 
       const furnitureElements = furnitures
@@ -59,6 +66,8 @@ class FurnitureGridComponent {
         .map(this.wrapInColumn);
 
       this.htmlElement.append(...furnitureElements);
+    } else {
+      this.htmlElement.innerHTML = `<h2>Šiuo metu baldų neturime</h2>`;
     }
   }
 }

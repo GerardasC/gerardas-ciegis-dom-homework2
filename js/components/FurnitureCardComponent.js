@@ -5,13 +5,13 @@ class FurnitureCardComponent {
   }
 
   init = () => {
-    const { title, type, price, location: { country, city, street }, owner: { fullname, mobile, address, email}, imgSrc} = this.props
+    const { title, type, price, location: { country, city, street }, owner: { fullname, mobile, address, email}, imgSrc, onDelete} = this.props
 
     this.htmlElement = document.createElement('article');
     this.htmlElement.className = 'card p-3 shadow';
     this.htmlElement.innerHTML = `
       <img src="${imgSrc}" class="card-img-top"/ height="200px" style="object-fit: cover">
-      <div class="card-body">
+      <div class="card-body d-flex flex-column">
       <h2 class="h5">${title}</h2>
       <h3 class="h6">Category: ${type}</h2>
       <ul>
@@ -43,7 +43,13 @@ class FurnitureCardComponent {
           <span>${email}</span>
         </li>
       </ul>
+      <div class="text-center mt-auto">
+        <button class="btn btn-danger">Ištrinti</button>
+      </div>
+      </div>
     `;
+    const delBtn = this.htmlElement.querySelector('.btn');
+    delBtn.addEventListener('click', onDelete);
   }
 
 }

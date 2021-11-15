@@ -19,6 +19,14 @@ class FurnitureGridComponent {
     this.render();
   }
 
+  deleteFurniture = (id) => {
+    API.deleteFurniture(
+      id,
+      () => API.fetchFurnitures(this.saveFurnitures, console.error),
+      console.error
+    );
+  }
+
   init = () => {
     this.state.loading = true;
     this.fetchFurnitures();
@@ -29,7 +37,7 @@ class FurnitureGridComponent {
 
   wrapInColumn = (element) => {
     const column = document.createElement('div');
-    column.className = 'col-12 col-sm-6 col-lg-4 col-xl-3';
+    column.className = 'col-12 col-sm-6 col-lg-4 col-xl-3 d-flex';
     column.appendChild(element);
     return column;
   }
@@ -42,7 +50,11 @@ class FurnitureGridComponent {
       this.htmlElement.innerHTML = '';
 
       const furnitureElements = furnitures
-        .map(x => new FurnitureCardComponent(x))
+        .map(({id, ...props}) => new FurnitureCardComponent({
+          id,
+          ...props,
+          onDelete: () => this.deleteFurniture(id)
+        }))
         .map(x => x.htmlElement)
         .map(this.wrapInColumn);
 

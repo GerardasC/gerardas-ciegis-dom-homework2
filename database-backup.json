@@ -1,0 +1,113 @@
+{
+  "furnitures": [
+  {
+    "id": "1",
+    "title": "Kėdė",
+    "type": "chair",
+    "price": 25,
+    "location": {
+      "country": "Lietuva",
+      "city": "Kaunas",
+      "street": "Savanorių g. 5"
+    },
+    "owner": {
+      "fullname": "Jonas",
+      "mobile": "+370 655 25251",
+      "address": "Klevų g. 3, Joniškis",
+      "email": "Jonas.Kapitonas@gmail.com"
+    },
+    "imgSrc": "https://www.ikea.com/kr/en/images/products/stefan-chair-brown-black__0727320_pe735593_s5.jpg"
+  },
+  {
+    "id": "2",
+    "title": "Stalas",
+    "type": "table",
+    "price": 75,
+    "location": {
+      "country": "Lietuva",
+      "city": "Kaunas",
+      "street": "Savanorių g. 18"
+    },
+    "owner": {
+      "fullname": "Jonaitė",
+      "mobile": "+370 655 25252",
+      "address": "Klevų g. 5, Joniškis",
+      "email": "Jonaitė16@gmail.com"
+    },
+    "imgSrc": "https://www.godrejinterio.com/imagestore/B2C/56121403SD00122/56121403SD00122_01_803x602.png"
+  },
+  {
+    "id": "3",
+    "title": "Lova",
+    "type": "bed",
+    "price": 199,
+    "location": {
+      "country": "Lietuva",
+      "city": "Vilnius",
+      "street": "Debesų g. 5"
+    },
+    "owner": {
+      "fullname": "Rokas",
+      "mobile": "+370 655 25252",
+      "address": "Kirvių g. 123, Šiauliai",
+      "email": "rokis@gmail.com"
+    },
+    "imgSrc": "https://www.bassettfurniture.com/_images/catalog/product-images/2611-K159S.JPG"
+  },
+  {
+    "id": "4",
+    "title": "Kėdė",
+    "type": "chair",
+    "price": 25,
+    "location": {
+      "country": "Lietuva",
+      "city": "Kaunas",
+      "street": "Savanorių g. 5"
+    },
+    "owner": {
+      "fullname": "Jonas",
+      "mobile": "+370 655 25251",
+      "address": "Klevų g. 3, Joniškis",
+      "email": "Jonas.Kapitonas@gmail.com"
+    },
+    "imgSrc": "https://www.ikea.com/kr/en/images/products/martin-chair-black-black__0729761_pe737128_s5.jpg"
+  },
+  {
+    "id": "5",
+    "title": "Stalas",
+    "type": "table",
+    "price": 75,
+    "location": {
+      "country": "Lietuva",
+      "city": "Kaunas",
+      "street": "Savanorių g. 18"
+    },
+    "owner": {
+      "fullname": "Jonaitė",
+      "mobile": "+370 655 25252",
+      "address": "Klevų g. 5, Joniškis",
+      "email": "Jonaitė16@gmail.com"
+    },
+    "imgSrc": "https://mobileimages.lowes.com/productimages/33d81eaa-9973-4ba2-a56f-5d9e30e682b7/14999006.jpg"
+  },
+  {
+    "id": "6",
+    "title": "Lova",
+    "type": "bed",
+    "price": 199,
+    "location": {
+      "country": "Lietuva",
+      "city": "Vilnius",
+      "street": "Debesų g. 5"
+    },
+    "owner": {
+      "fullname": "Rokas",
+      "mobile": "+370 655 25252",
+      "address": "Kirvių g. 123, Šiauliai",
+      "email": "rokis@gmail.com"
+    },
+    "imgSrc": "https://www.bedguru.co.uk/media/catalog/product/cache/d55bdf088392a9ce4f0e3c81e8b8c3a2/k/b/kb-fre-ted.jpg"
+  }
+
+  ]
+}

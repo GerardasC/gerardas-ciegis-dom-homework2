@@ -1,4 +1,4 @@
-const baseURL = 'http://localho1st:3000';
+const baseURL = 'http://localhost:3000';
 
 class API {
   static fetchFurnitures = (success, failure) => {

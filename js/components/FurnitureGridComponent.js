@@ -7,7 +7,10 @@ class FurnitureGridComponent {
     this.init();
   }
 
-  fetchFurnitures = () => API.fetchFurnitures(this.saveFurnitures, console.error)
+  fetchFurnitures = () => setTimeout(() => {  
+    return API.fetchFurnitures(this.saveFurnitures, console.error); 
+    
+ },1000)
 
   saveFurnitures = (furnitures) => {
     this.state.furnitures = furnitures;
@@ -20,15 +23,30 @@ class FurnitureGridComponent {
     this.state.loading = true;
     this.fetchFurnitures();
     this.htmlElement = document.createElement('div');
+    this.htmlElement.className = "row g-3";
     this.render();
+  }
+
+  wrapInColumn = (element) => {
+    const column = document.createElement('div');
+    column.className = 'col-12 col-sm-6 col-lg-4 col-xl-3';
+    column.appendChild(element);
+    return column;
   }
 
   render = () => {
     const { loading, furnitures } = this.state;
     if (loading) {
-      this.htmlElement.innerHTML = 'siunčiama...';
+      this.htmlElement.innerHTML = `<div class="text-center"><img src="assets/loading.gif"/></div>`;
     } else {
-      this.htmlElement.innerHTML = 'parsiųsta';
+      this.htmlElement.innerHTML = '';
+
+      const furnitureElements = furnitures
+        .map(x => new FurnitureCardComponent(x))
+        .map(x => x.htmlElement)
+        .map(this.wrapInColumn);
+
+      this.htmlElement.append(...furnitureElements);
     }
   }
 }
